@@ -1,7 +1,7 @@
 <template>
-  <div class="about-page">
+  <Container class="about-page">
 
-    <h1>About Walk.AI</h1>
+    <h1 class="text-primary">About Walk.AI</h1>
     <div class="content">
       <p>
         At Walk.AI, we envision a world where planning a trip is as enjoyable and seamless as the journey itself.
@@ -9,7 +9,7 @@
         comprehensive platform that caters to the unique preferences and needs of each traveler.
       </p>
 
-      <h2>Where the Problem Starts</h2>
+      <h2 class="text-secondary">Where the Problem Starts</h2>
       <p>
         Planning a trip involves navigating a maze of information spread across various platforms, making it
         time-consuming and overwhelming. Travelers face several challenges:
@@ -30,7 +30,7 @@
         </li>
       </ul>
 
-      <h2>Where Our Solution Comes In</h2>
+      <h2 class="text-secondary">Where Our Solution Comes In</h2>
       <p>
         Walk.AI addresses these challenges by offering a smart, AI-driven travel planning platform that functions
         as a personal travel guide:
@@ -59,14 +59,14 @@
         </li>
       </ul>
 
-      <h2>Our Team</h2>
+      <h2 class="text-secondary">Our Team</h2>
       <p>
         Walk.AI is led by a team of passionate entrepreneurs: Elroie Agam, Eyal Agam. With extensive experience in
         management, strategic development, and technology, our founders are dedicated to creating a user-centric
         platform that transforms travel planning.
       </p>
 
-      <h2>Join Us</h2>
+      <h2 class="text-secondary">Join Us</h2>
       <p>
         As we continue to innovate and expand, we invite travelers and businesses to join us on this journey.
         Discover the future of travel planning with Walk.AI—where every trip is not just planned, but perfectly
@@ -79,7 +79,7 @@
         Join Walk.AI and embark on your next adventure with ease. Sign up now to join our waitlist and be part of
         the future of travel planning.
       </p>
-      <h2>Frequently Asked Questions</h2>
+      <h2 class="text-secondary">Frequently Asked Questions</h2>
       <ul>
         <li>
           <span>What is Walk.ai?</span>
@@ -109,7 +109,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </Container>
 </template>
 
 <script setup lang="ts">
@@ -136,6 +136,13 @@
   .content p {
     margin-bottom: 10px;
     text-align: left;
+  }
+
+  li {
+    span {
+
+      font-weight: bold;
+    }
   }
 
   .content ul {

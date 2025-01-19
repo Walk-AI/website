@@ -1,0 +1,211 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "../variables";
+
+$schemes: [('name':'light',
+            'colors':(
+        'primary':variables.$primary,
+        'secondary':variables.$secondary,
+        'accent':variables.$accent,
+        'success':variables.$success,
+        'error':variables.$error,
+        'warning':variables.$warning,
+        'info':variables.$info,
+        'bg':variables.$bg-color,
+        'body-bg':variables.$body-bg,
+        'disabled':variables.$disabled,
+        'widget-bg':variables.$widget-bg-color,
+        'input-bg':variables.$input-bg,
+        'border':variables.$border-color,
+        'text':variables.$text,
+        'title':variables.$title,
+        'shadow':variables.$shadow-color,
+                'white':variables.$white,
+        'dark':variables.$dark,
+),
+            'root-colors':(
+        'primary':variables.$primary,
+        'secondary':variables.$secondary,
+        'accent':variables.$accent,
+        'success':variables.$success,
+        'error':variables.$error,
+        'warning':variables.$warning,
+        'info':variables.$info,
+                'white':variables.$white,
+        'dark':variables.$dark,
+),
+            'vars':(
+        'change-percent':variables.$change-percent
+)
+        ),
+      (
+        'name':'dark',
+        'colors':(
+        'primary':variables.$primary-dark,
+        'secondary':variables.$secondary-dark,
+        'accent':variables.$accent-dark,
+        'success':variables.$success-dark,
+        'error':variables.$error-dark,
+        'warning':variables.$warning-dark,
+        'info':variables.$info-dark,
+        'bg':variables.$bg-color-dark,
+        'body-bg':variables.$body-bg-dark,
+        'disabled':variables.$disabled-dark,
+        'widget-bg':variables.$widget-bg-color-dark,
+        'input-bg':variables.$input-bg-dark,
+        'border':variables.$border-color-dark,
+        'text':variables.$text-dark,
+        'title':variables.$title-dark,
+        'shadow':variables.$shadow-color-dark,
+                'white':variables.$white-dark,
+        'dark':variables.$dark-dark,
+),
+        'root-colors': (
+        'primary':variables.$primary-dark,
+        'secondary':variables.$secondary-dark,
+        'accent':variables.$accent-dark,
+        'success':variables.$success-dark,
+        'error':variables.$error-dark,
+        'warning':variables.$warning-dark,
+        'info':variables.$info-dark,
+                'white':variables.$white-dark,
+        'dark':variables.$dark-dark,
+),
+        'vars': (
+        'change-percent':variables.$change-percent-dark
+)
+        ),
+];
+
+
+:root {
+
+  --color-icon: var(--color-text);
+
+
+  --input-border-color: #2e2e41;
+  --input-border-focus-color: #393950;
+
+  @each $item in $schemes {
+
+
+    $colors: map.get($item, 'colors');
+    $root-colors: map.get($item, 'root-colors');
+    $vars: map.get($item, 'vars');
+    $percent: map.get($vars, 'change-percent');
+
+    $theme: map.get($item, 'name');
+    body[data-theme="#{$theme}"] {
+      color-scheme: #{$theme};
+      @each $key in map.keys($colors) {
+        --color-#{$key}: #{map.get($colors, $key)};
+        --color-#{$key}-bright: #{color.mix(white,map.get($colors, $key), $percent)};
+        --color-#{$key}-brighter: #{color.mix(white,map.get($colors, $key), $percent * 4)};
+        --color-#{$key}-dark: #{color.mix(black,map.get($colors, $key), $percent)};
+        --color-#{$key}-darker: #{color.mix(black,map.get($colors, $key), $percent * 4)};
+
+      }
+      --color-input-bg: #{map.get($colors, 'input-bg')};
+      --color-card-bg: #{map.get($colors, 'widget-bg')};
+      --shadow: 0.5px 0.5px 3px 1px #{map.get($colors, 'shadow')};
+      --shadow-small: 0.5px 0.5px 1px 1px #{map.get($colors, 'shadow')};
+      --shadow-inset: inset 0 0 3px 1px #{map.get($colors, 'shadow')};
+
+      @each $key in map.keys($root-colors) {
+        --color-card-bg-#{$key}: #{map.get($root-colors,$key)};
+        --color-card-bg-#{$key}-bright: #{color.mix(white,map.get($root-colors,$key),$percent)};
+        --color-card-bg-#{$key}-brighter: #{color.mix(white,map.get($root-colors,$key),$percent * 4)};
+        --color-card-bg-#{$key}-dark: #{color.mix(black,map.get($root-colors,$key),$percent)};
+        --color-card-bg-#{$key}-darker: #{color.mix(black,map.get($root-colors,$key),$percent * 4)};
+
+      }
+
+
+    }
+
+  }
+
+}
+
+$variations: ['bright','brighter','dark','darker'];
+@each $item in $schemes {
+  $colors: map.get($item, 'colors');
+  $root-colors: map.get($item, 'root-colors');
+  $vars: map.get($item, 'vars');
+  $percent: map.get($vars, 'change-percent');
+  $theme: map.get($item, 'name');
+  [data-theme="#{$theme}"] {
+
+    @each $color in map.keys($root-colors) {
+      .bg-#{$color} {
+        background-color: var(--color-#{$color});
+      }
+      .text-#{$color} {
+        color: var(--color-#{$color});
+      }
+      .border-#{$color} {
+        border-color: var(--color-#{$color});
+      }
+      @for $i from 1 through list.length($variations) {
+        .text-#{$color}-#{list.nth($variations, $i)} {
+          color: var(--color-#{$color}-#{list.nth($variations, $i)});
+        }
+
+
+        .bg-#{$color}-#{list.nth($variations, $i)} {
+          background-color: var(--color-#{$color}-#{list.nth($variations, $i)});
+        }
+
+
+        .border-#{$color}-#{list.nth($variations, $i)} {
+          border-color: var(--color-#{$color}-#{list.nth($variations, $i)});
+        }
+
+      }
+    }
+    @for $i from 1 through list.length($variations) {
+      .bg-#{list.nth($variations, $i)} {
+        background-color: var(--color-bg-#{list.nth($variations, $i)});
+      }
+      .text-#{list.nth($variations, $i)} {
+        color: var(--color-text-#{list.nth($variations, $i)});
+      }
+
+    }
+
+  }
+
+}
+
+
+.color-white {
+  color: #ffffff !important;
+}
+
+.border {
+  border-width: 1.5px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: var(--color-border);
+  border-radius: var(--border-radius);
+
+  &.none {
+    border-color: transparent;
+  }
+}
+
+
+.bg {
+  background-color: var(--color-bg);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-secondary);
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  width: 100%;
+}

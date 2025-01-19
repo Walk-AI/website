@@ -1,9 +1,9 @@
 <template>
-  <div class="member-card">
-    <div class="profile-image">
+  <Container class="row shrink member-card overflow-visible z-2">
+    <div class="profile-image card p-0 border-secondary">
       <img :src="props.img" alt="image"/>
     </div>
-    <div class="profile-info">
+    <Container class="profile-info">
 
       <div class="profile-name">
         {{ props.name }}
@@ -19,8 +19,8 @@
       </div>
 
 
-    </div>
-  </div>
+    </Container>
+  </Container>
 </template>
 
 <script setup lang="ts">
@@ -38,16 +38,23 @@ const props = defineProps<{
 <style lang="scss">
 
 .member-card {
-  display: grid;
-  grid-template-columns: max-content;
-  grid-template-rows: max-content max-content;
+  cursor: pointer;
+
+
+  &:hover {
+    .profile-image {
+      transform: scale(1.05);
+      border-color: var(--color-primary);
+    }
+  }
 
   .profile-image {
     width: 15vw;
     height: 15vw;
     overflow: clip;
+
     border-radius: 20px;
-    background-color: var(--color-primary-light);
+    transition: all var(--snap-ease);
 
     img {
       width: 100%;
@@ -56,10 +63,6 @@ const props = defineProps<{
   }
 
   .profile-info {
-    display: grid;
-    gap: 10px;
-    padding: 10px;
-    grid-template-columns: 1fr;
 
     grid-template-areas:
       "profile-name profile-linkedin"

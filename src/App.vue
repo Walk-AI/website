@@ -1,21 +1,19 @@
 <template>
-  <div class="grid">
-    <HeaderBar class="sticky-top"/>
-    <RouterView/>
-  </div>
+  <RootLayout>
+
+    <HeaderBar/>
+    <TransitionRouterView fast/>
+
+  </RootLayout>
 </template>
 
 <script setup lang="ts">
 import {RouterView} from "vue-router";
 import HeaderBar from "./components/HeaderBar.vue";
+import TransitionRouterView from "./components/transitions/TransitionRouterView.vue";
+import RootLayout from "./components/layout/RootLayout.vue";
 </script>
 
 <style lang="scss">
-
-.sticky-top {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
 </style>

@@ -1,0 +1,48 @@
+@use "variables";
+@use "layout";
+@use "color";
+@use "typography";
+@use "input";
+@use "animation";
+@use "widgets";
+@use "buttons";
+@use "grid";
+@use "cursor";
+
+:root {
+  --border-radius: #{variables.$border-radius};
+  --font-size: #{variables.$font-size};
+  --font-size-mobile: #{variables.$font-size-mobile};
+  --font-family: #{variables.$font-family};
+  --font-family-title: #{variables.$font-family-title};
+  --text-body-size: 1rem;
+  font-size: var(--font-size);
+  font-family: var(--font-family), sans-serif;
+  color: var(--text);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size: var(--font-size-mobile);
+  }
+}
+
+
+html,
+body,
+[name="app"] {
+  background: var(--color-body-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+
+

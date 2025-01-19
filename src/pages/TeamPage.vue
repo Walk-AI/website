@@ -1,8 +1,13 @@
 <template>
-  <div class="team-members">
-    <TeamMemberCard v-for="member in members" :key="member.name" :name="member.name" :title="member.title"
-                    :bio="member.bio" :img="member.img" :linkedin="member.linkedin"/>
-  </div>
+  <Container class="row shrink gap-4">
+    <div class="title-1 text-center text-primary">Meet the Team</div>
+    <Container class="col shrink horizontal-align-center gap-5 overflow-visible">
+
+
+      <TeamMemberCard v-for="member in members" :key="member.name" :name="member.name" :title="member.title"
+                      :bio="member.bio" :img="member.img" :linkedin="member.linkedin"/>
+    </Container>
+  </Container>
 </template>
 
 <script setup lang="ts">
@@ -40,11 +45,5 @@ const members: TeamMember[] = [
 ]
 </script>
 <style lang="scss">
-.team-members {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
 
-
-}
 </style>

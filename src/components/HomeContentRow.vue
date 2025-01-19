@@ -1,41 +1,35 @@
 <template>
-  <div class="grid home-content-row" :class="{
+
+  <Container class="col home-content-row" :class="{
     flip: flip
   }">
-    <div v-if="flip">
+    <AppGif v-if="flip" :image="image"/>
 
-      <slot name="image">
-        <img :src="image" alt="image"/>
-      </slot>
-    </div>
+    <Container class="content-wrapper center-y">
 
-
-    <div class="content-wrapper">
-
-      <h1 class="title">
+      <Container class="title-1 text-primary align-content-end">
 
         <slot name="title">
           {{ title }}
         </slot>
-      </h1>
-      <p>
+      </Container>
+      <Container class="align-content-start">
+        <p>
 
-        <slot name="text">
-          {{ text }}
-        </slot>
-      </p>
-    </div>
-    <div v-if="!flip">
+          <slot name="text">
+            {{ text }}
+          </slot>
+        </p>
+      </Container>
+    </Container>
+    <AppGif v-if="!flip" :image="image"/>
 
-      <slot name="image">
-        <img :src="image" alt="image"/>
-      </slot>
-    </div>
-
-  </div>
+  </Container>
 </template>
 
 <script setup lang="ts">
+import AppGif from "./AppGif.vue";
+
 const props = defineProps<{
   title: string
   text: string
@@ -46,17 +40,9 @@ const props = defineProps<{
 
 <style lang="scss">
 .home-content-row {
-  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
 
   .content-wrapper {
-    display: grid;
-    place-content: center;
-    grid-template-rows: max-content max-content;
-
-    h1 {
-      margin: 0;
-    }
-
 
   }
 

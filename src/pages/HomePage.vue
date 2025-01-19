@@ -1,8 +1,12 @@
 <template>
-  <div class="home-container">
-    <HomeContentRow v-for="item in content" :title="item.title" :text="item.text" :image="item.image"
-                    :flip="item.flip"/>
-  </div>
+  <Container>
+
+    <Container class="row shrink horizontal-align-center z-1">
+
+      <HomeContentRow v-for="item in content" :title="item.title" :text="item.text" :image="item.image"
+                      :flip="item.flip"/>
+    </Container>
+  </Container>
 </template>
 
 <script setup lang="ts">
@@ -30,8 +34,5 @@ const content = [
 </script>
 
 <style lang="scss">
-.home-container {
-  display: grid;
 
-}
 </style>

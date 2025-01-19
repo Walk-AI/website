@@ -1,0 +1,21 @@
+@use "grid-overflow";
+@use "grid-columns";
+@use "grid-base";
+@use "grid-rows";
+@use "grid-alignment";
+@use "grid-gap";
+
+
+body {
+  &.grid-debug {
+    .grid {
+      outline: 1px dashed rgb(211, 2, 236);
+    }
+
+    .grid > * {
+      &:not(.grid) {
+        outline: 1px dashed rgb(0, 0, 255);
+      }
+    }
+  }
+}
