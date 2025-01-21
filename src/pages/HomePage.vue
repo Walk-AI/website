@@ -1,11 +1,9 @@
 <template>
-  <Container>
 
-    <Container class="row shrink horizontal-align-center z-1">
+  <Container class="row shrink horizontal-align-center">
 
-      <HomeContentRow v-for="item in content" :title="item.title" :text="item.text" :image="item.image"
-                      :flip="item.flip"/>
-    </Container>
+    <HomeContentRow v-for="item in content" :title="item.title" :text="item.text" :image="item.image"
+                    :flip="item.flip"/>
   </Container>
 </template>
 
@@ -34,5 +32,7 @@ const content = [
 </script>
 
 <style lang="scss">
-
+.home-page {
+  height: max-content;
+}
 </style>

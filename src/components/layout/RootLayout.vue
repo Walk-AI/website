@@ -1,6 +1,7 @@
 <template>
-  <div class="vh-100 vw-100 root-container">
+  <div class="vh-100 vw-100">
     <div class="background-roads"></div>
+
     <slot></slot>
 
   </div>
@@ -27,14 +28,14 @@ onMounted(() => {
 }
 
 .background-roads {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100%;
-  z-index: 0;
   background-image: url('/images/roads.png');
   background-size: contain;
   background-position: center;
   opacity: 0.1;
   pointer-events: none;
+  z-index: -1;
 }
 </style>

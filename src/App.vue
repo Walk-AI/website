@@ -1,10 +1,17 @@
 <template>
-  <RootLayout>
+  <div class="vw-100 vh-100">
 
-    <HeaderBar/>
-    <TransitionRouterView fast/>
+    <div class="background-roads"></div>
+    <div class="z-1 position-relative vh-100 vw-100">
 
-  </RootLayout>
+      <Container class="root-container">
+        <HeaderBar/>
+
+        <TransitionRouterView fast/>
+      </Container>
+    </div>
+
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -16,4 +23,20 @@ import RootLayout from "./components/layout/RootLayout.vue";
 
 <style lang="scss">
 
+.root-container {
+  grid-template-rows: max-content 1fr;
+
+}
+
+.background-roads {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+  background-image: url('/images/roads.png');
+  background-size: contain;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
 </style>

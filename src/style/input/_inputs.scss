@@ -4,7 +4,7 @@
 }
 
 .input {
-  --input-width: 250px;
+  --input-width: 300px;
   position: relative;
   min-width: var(--input-width);
   width: var(--input-width);
@@ -30,11 +30,11 @@
 
   input, select, textarea {
     font-family: var(--font-family), sans-serif;
-    max-width: var(--input-width);
+    //max-width: var(--input-width);
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border);
     background-color: var(--color-input-bg);
-    font-size: calc(0.87rem);
+    font-size: 1rem;
     box-sizing: border-box;
 
     line-height: var(--line-height);
@@ -71,13 +71,9 @@
   textarea {
     line-height: 1.2;
     min-height: var(--line-height);
-    height: var(--line-height);
+    //height: var(--line-height);
     padding-block: var(--padding-y);
-    resize: none;
-    //max-height: var(--line-height);
     padding-inline: var(--padding-x);
-
-    overflow: hidden;
 
 
   }

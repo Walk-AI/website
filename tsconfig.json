@@ -3,6 +3,7 @@
     "composite": true,
     "target": "ES2020",
     "useDefineForClassFields": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
     "module": "ESNext",
     "lib": [
       "ES2020",
