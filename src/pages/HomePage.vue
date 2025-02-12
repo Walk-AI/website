@@ -4,11 +4,13 @@
 
     <HomeContentRow v-for="item in content" :title="item.title" :text="item.text" :image="item.image"
                     :flip="item.flip"/>
+    <Footer></Footer>
   </Container>
 </template>
 
 <script setup lang="ts">
 
+import Footer from "@/components/Footer.vue";
 import HomeContentRow from "../components/HomeContentRow.vue";
 
 const content = [

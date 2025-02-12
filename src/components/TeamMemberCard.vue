@@ -39,6 +39,7 @@ const props = defineProps<{
 
 .member-card {
   cursor: pointer;
+  width: max-content;
 
 
   &:hover {
@@ -67,6 +68,9 @@ const props = defineProps<{
     grid-template-areas:
       "profile-name profile-linkedin"
       "profile-title profile-title";
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    align-items: center;
 
 
     .profile-name {
@@ -80,6 +84,7 @@ const props = defineProps<{
       font-size: 1.2rem;
       font-weight: bold;
       grid-area: profile-title;
+      text-align: center;
     }
 
     .profile-bio {
@@ -124,6 +129,19 @@ const props = defineProps<{
       }
     }
   }
+}
+
+@media (max-width: 800px) {
+  .member-card {
+
+    .profile-image {
+      width: 80vw;
+      height: 80vw;
+      max-width: 300px;
+      max-height: 300px;
+    }
+  }
+
 }
 
 </style>

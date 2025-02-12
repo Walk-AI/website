@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="gif-container">
     <img :src="image" alt="image"/>
   </div>
 </template>
@@ -10,6 +10,19 @@ const props = defineProps<{
 }>()
 </script>
 
-<style scoped>
+<style>
 
+.gif-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
 </style>

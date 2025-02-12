@@ -1,9 +1,9 @@
 <template>
 
-  <Container class="col home-content-row" :class="{
+  <Container class="home-content-row" :class="{
     flip: flip
   }">
-    <AppGif v-if="flip" :image="image"/>
+    <AppGif :image="image" class="app-gif"/>
 
     <Container class="content-wrapper center-y">
 
@@ -13,7 +13,7 @@
           {{ title }}
         </slot>
       </Container>
-      <Container class="align-content-start">
+      <Container class="text-wrapper">
         <p>
 
           <slot name="text">
@@ -22,7 +22,7 @@
         </p>
       </Container>
     </Container>
-    <AppGif v-if="!flip" :image="image"/>
+
 
   </Container>
 </template>
@@ -41,11 +41,62 @@ const props = defineProps<{
 <style lang="scss">
 .home-content-row {
   max-width: 1000px;
+  grid-template-areas: "app-gif content-wrapper";
+
+  &.flip {
+    grid-template-areas: "content-wrapper app-gif";
+  }
+
+  .app-gif {
+    grid-area: app-gif;
+  }
 
   .content-wrapper {
-
+    grid-area: content-wrapper;
   }
 
 
+}
+
+
+@media (max-width: 800px) {
+  .home-content-row {
+
+    grid-template-areas: "content-wrapper" "app-gif";
+    grid-template-columns: 100%;
+    grid-template-rows: max-content max-content;
+    justify-content: center;
+    justify-items: center;
+    overflow: hidden;
+
+    &.flip {
+      grid-template-areas: "content-wrapper" "app-gif";
+    }
+
+    .app-gif {
+      padding-block-start: 1rem;
+      width: 80vw;
+      max-width: 300px;
+      max-height: 80vh;
+
+    }
+
+    .content-wrapper {
+      padding-top: 3rem;
+      justify-content: center;
+
+      .title-1 {
+        text-align: center;
+        font-size: 2.5rem;
+      }
+
+      .text-wrapper {
+        text-align: center;
+        max-width: 85vw;
+      }
+    }
+
+
+  }
 }
 </style>

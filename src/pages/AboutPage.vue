@@ -108,12 +108,15 @@
             your trip a success.</p>
         </li>
       </ul>
+      <Footer></Footer>
     </div>
+
   </Container>
 </template>
 
 <script setup lang="ts">
 
+import Footer from "@/components/Footer.vue";
 </script>
 
 <style lang="scss">

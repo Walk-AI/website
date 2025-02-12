@@ -1,16 +1,18 @@
 <template>
-  <Container class="row shrink gap-4">
+  <Container class="row shrink gap-4 team-page">
     <div class="title-1 text-center text-primary">Meet the Team</div>
-    <Container class="col shrink horizontal-align-center gap-5 overflow-visible">
+    <Container class="team shrink horizontal-align-center gap-5 overflow-visible">
 
 
       <TeamMemberCard v-for="member in members" :key="member.name" :name="member.name" :title="member.title"
                       :bio="member.bio" :img="member.img" :linkedin="member.linkedin"/>
     </Container>
+    <Footer></Footer>
   </Container>
 </template>
 
 <script setup lang="ts">
+import Footer from "@/components/Footer.vue";
 import TeamMemberCard from "../components/TeamMemberCard.vue";
 
 interface TeamMember {
@@ -45,5 +47,27 @@ const members: TeamMember[] = [
 ]
 </script>
 <style lang="scss">
+.team-page {
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
 
+.team {
+  grid-auto-flow: column;
+
+
+}
+
+@media (max-width: 800px) {
+  .team-page {
+    .footer {
+      position: relative;
+    }
+  }
+  .team {
+    grid-auto-flow: row;
+  }
+}
 </style>

@@ -8,6 +8,7 @@
         <HeaderBar/>
 
         <TransitionRouterView fast/>
+
       </Container>
     </div>
 
@@ -15,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import Footer from "@/components/Footer.vue";
 import {RouterView} from "vue-router";
 import HeaderBar from "./components/HeaderBar.vue";
 import TransitionRouterView from "./components/transitions/TransitionRouterView.vue";
@@ -24,7 +26,7 @@ import RootLayout from "./components/layout/RootLayout.vue";
 <style lang="scss">
 
 .root-container {
-  grid-template-rows: max-content 1fr;
+  grid-template-rows: max-content 1fr max-content;
 
 }
 
