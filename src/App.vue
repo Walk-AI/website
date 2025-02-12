@@ -1,5 +1,5 @@
 <template>
-  <div class="vw-100 vh-100">
+  <div class="app-wrapper">
 
     <div class="background-roads"></div>
     <div class="z-1 position-relative vh-100 vw-100">
@@ -24,6 +24,10 @@ import RootLayout from "./components/layout/RootLayout.vue";
 </script>
 
 <style lang="scss">
+.app-wrapper {
+  width: 100%;
+  height: 100%;
+}
 
 .root-container {
   grid-template-rows: max-content 1fr max-content;
