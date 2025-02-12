@@ -1,8 +1,9 @@
+import {createWebHashHistory} from "vue-router";
 import {createRouter} from "vue-router";
 import {createWebHistory} from "vue-router";
 
 export const walkRouter = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [
         {
             path: "/",
