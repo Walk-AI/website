@@ -2,7 +2,7 @@
   <div class="app-wrapper">
 
     <div class="background-roads"></div>
-    <div class="z-1 position-relative vh-100 vw-100">
+    <div class="z-1 position-relative main-content">
 
       <Container class="root-container">
         <HeaderBar/>
@@ -24,7 +24,7 @@ import RootLayout from "./components/layout/RootLayout.vue";
 </script>
 
 <style lang="scss">
-.app-wrapper {
+.app-wrapper, .main-content {
   width: 100%;
   height: 100%;
 }
