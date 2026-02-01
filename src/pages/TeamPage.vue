@@ -37,13 +37,7 @@ const members: TeamMember[] = [
     bio: 'Eyal is the COO of our company',
     img: '/team/eyal.png',
     linkedin: 'https://www.linkedin.com/in/eyal-agam-3009011ba/'
-  }, {
-    name: 'Eli Veffer',
-    title: 'CTO',
-    bio: 'Eli is the CTO of our company',
-    img: '/team/eli.png',
-    linkedin: 'https://www.linkedin.com/in/eliveffer/'
-  }
+  },
 ]
 </script>
 <style lang="scss">
