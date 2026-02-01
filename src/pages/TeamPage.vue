@@ -23,26 +23,28 @@ interface TeamMember {
   linkedin: string
 }
 
+const base = import.meta.env.BASE_URL;
+
 const members: TeamMember[] = [
   {
     name: 'Elroie Agam',
     title: 'CEO',
     bio: 'Elroie is the CEO of our company',
-    img: 'team/elroie.png',
+    img: base + 'team/elroie.png',
     linkedin: 'https://www.linkedin.com/in/elroieagam/'
   },
   {
     name: 'Eyal Agam',
     title: 'COO',
     bio: 'Eyal is the COO of our company',
-    img: 'team/eyal.png',
+    img: base + 'team/eyal.png',
     linkedin: 'https://www.linkedin.com/in/eyal-agam-3009011ba/'
   },
   {
     name: 'Alexander Shugaev',
     title: 'CTO',
     bio: 'Alexander is the CTO of our company',
-    img: 'team/alexander.png',
+    img: base + 'team/alexander.png',
     linkedin: 'https://www.linkedin.com/in/alexander-shugaev/'
   }
 ]
