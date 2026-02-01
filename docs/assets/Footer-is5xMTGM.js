@@ -1,1 +1,0 @@
-import{_ as e,o,c as r}from"./index-CGO8t8Q2.js";const c={},s={class:"footer"};function t(n,_){return o(),r("div",s," © 2025 WalkAI. All rights reserved. ")}const l=e(c,[["render",t]]);export{l as F};
