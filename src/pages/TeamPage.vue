@@ -38,6 +38,13 @@ const members: TeamMember[] = [
     img: '/team/eyal.png',
     linkedin: 'https://www.linkedin.com/in/eyal-agam-3009011ba/'
   },
+  {
+    name: 'Alexander Shugaev',
+    title: 'CTO',
+    bio: 'Alexander is the CTO of our company',
+    img: '/team/alexander.png',
+    linkedin: 'https://www.linkedin.com/in/alexander-shugaev/'
+  }
 ]
 </script>
 <style lang="scss">
