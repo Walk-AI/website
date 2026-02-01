@@ -1,13 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="icon" type="image/svg+xml" href="/brand/logo-green.svg"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WalkAI</title>
+  <meta charset="UTF-8"/>
+
+  <!-- Fix deep-link redirects coming from public/404.html on GitHub Pages -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get("p");
+      const q = params.get("q");
+      const h = params.get("h");
+      if (p !== null) {
+        const path = p || "/";
+        const search = q ? q : "";
+        const hash = h ? h : "";
+        window.history.replaceState(null, "", "/website" + path + search + hash);
+      }
+    })();
+  </script>
+
+  <!-- Make this relative so it works under /website/ -->
+  <link rel="icon" type="image/svg+xml" href="./brand/logo-green.svg"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WalkAI</title>
 </head>
+
 <body data-theme="dark">
-<div id="app"></div>
-<script type="module" src="/src/main.ts"></script>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>

@@ -1,14 +1,34 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="icon" type="image/svg+xml" href="/website/brand/logo-green.svg"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WalkAI</title>
-  <script type="module" crossorigin src="/website/assets/index-8Ae6jck4.js"></script>
+  <meta charset="UTF-8"/>
+
+  <!-- Fix deep-link redirects coming from public/404.html on GitHub Pages -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get("p");
+      const q = params.get("q");
+      const h = params.get("h");
+      if (p !== null) {
+        const path = p || "/";
+        const search = q ? q : "";
+        const hash = h ? h : "";
+        window.history.replaceState(null, "", "/website" + path + search + hash);
+      }
+    })();
+  </script>
+
+  <!-- Make this relative so it works under /website/ -->
+  <link rel="icon" type="image/svg+xml" href="./brand/logo-green.svg"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WalkAI</title>
+  <script type="module" crossorigin src="/website/assets/index-CGO8t8Q2.js"></script>
   <link rel="stylesheet" crossorigin href="/website/assets/index-CavwswDR.css">
 </head>
+
 <body data-theme="dark">
-<div id="app"></div>
+  <div id="app"></div>
 </body>
 </html>
