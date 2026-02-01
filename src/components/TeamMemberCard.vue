@@ -44,7 +44,7 @@ const props = defineProps<{
 
   &:hover {
     .profile-image {
-      transform: scale(1.05);
+      transform: scale(1.02);
       border-color: var(--color-primary);
     }
   }
@@ -100,6 +100,7 @@ const props = defineProps<{
       border-radius: 8px;
       padding: 2px;
       transition: all var(--transition);
+      margin-top: 10px;
 
       a {
         width: 100%;
