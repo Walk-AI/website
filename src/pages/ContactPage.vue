@@ -14,11 +14,11 @@
         <Container class="overflow-visible horizontal-align-center">
           <div class="title-2 text-secondary">Social</div>
           <Container class="col shrink gap-2 overflow-visible">
-            <SocialLink link="https://www.linkedin.com/company/walk-ai/" image="/linkedin.png"
+            <SocialLink link="https://www.linkedin.com/company/walk-ai/" image="linkedin.png"
                         alt="linkedin"></SocialLink>
-            <SocialLink link="" image="/twitter.png" alt="x.com"></SocialLink>
-            <SocialLink link="" image="/instagram.png" alt="instagram"></SocialLink>
-            <SocialLink link="" image="/facebook.png" alt="facebook"></SocialLink>
+            <SocialLink link="" image="twitter.png" alt="x.com"></SocialLink>
+            <SocialLink link="" image="instagram.png" alt="instagram"></SocialLink>
+            <SocialLink link="" image="facebook.png" alt="facebook"></SocialLink>
           </Container>
         </Container>
 
