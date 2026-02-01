@@ -4,15 +4,13 @@ import { fileURLToPath } from "node:url";
 
 export default defineConfig({
   base: '/website/',
+  build: {
+    outDir: 'docs',
+  },
   plugins: [vue()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
-    }
-  },
-  css: {
-    preprocessorOptions: {
-      scss: { api: "modern-compiler" }
     }
   },
 })
